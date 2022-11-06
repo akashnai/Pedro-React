@@ -1,37 +1,45 @@
 import "./App.css";
+// import {User} from './User'
 
 function App() {
+  // const age = 18;
+  // const isGreen = false
+  // const names = ["pedro", "jake", "jessica", "mike", "surpiso"];
+
+  // const users = [
+  //   {name: 'akki', age: 20},
+  //   {name: 'vivek', age: 18},
+  //   {name: 'vaibhavi', age: 19},
+  // ]
+
+  const planets = [
+    {name: 'mars', isGasPlanet: false},
+    {name: 'earth', isGasPlanet: false},
+    {name: 'jupiter', isGasPlanet: true},
+    {name: 'venus', isGasPlanet: false},
+    {name: 'neptune', isGasPlanet: true},
+    {name: 'uranus', isGasPlanet: true},
+  ]
+
   return (
     <div className="App">
-      {/* <User name='akki' age='19' email='akki@akashnai.com' />
-      <User name='vivek' age='15' email='vivek@akashnai.com'  />
-      <User name='vaibhavi' age='18' email='vaibhavi@akashnai.com'  /> */}
+      {/* <h1 className="name" >{age >= 18 ? "OverAge" : "UnderAge"}</h1>
+      <h1 style={isGreen ? {color: 'green'} : {color: 'red'}}>This have color</h1>
+      
+      {isGreen && <button>This is button</button>} */}
 
-      <Job salary={90000} position='Senior SDE' company='Amazon' />
-      <Job salary={12000} position='Junior SDE' company='Google' />
-      <Job salary={10000} position='Project Manager' company='Netflix' />
+      {/* {names.map((name, key) => (
+        <h1 key={key}>{name}</h1>
+      ))} */}
+
+      {/* {users.map((user,key) => {
+        return <User name={user.name} age={user.age} />
+      })} */}
+
+      {planets.map((planet) => !planet.isGasPlanet && <h1> {planet.name} </h1>)}
     </div>
   );
 }
 
-const Job = ({salary, position, company}) => {
-  return (
-    <>
-      <h1>{salary}</h1>
-      <h1>{position}</h1>
-      <h1>{company}</h1>
-    </>
-  )
-}
-
-// const User = ({name, age, email}) => {
-//   return (
-//     <>
-//       <h1>{name}</h1>
-//       <h1>{age}</h1>
-//       <h1>{email}</h1>
-//     </>
-//   );
-// };
 
 export default App;

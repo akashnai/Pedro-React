@@ -1,45 +1,79 @@
 import "./App.css";
-// import {User} from './User'
+import { useState } from "react";
 
 function App() {
-  // const age = 18;
-  // const isGreen = false
-  // const names = ["pedro", "jake", "jessica", "mike", "surpiso"];
+  // ex1
+  // const [age, setAge] = useState(0)
 
-  // const users = [
-  //   {name: 'akki', age: 20},
-  //   {name: 'vivek', age: 18},
-  //   {name: 'vaibhavi', age: 19},
-  // ]
+  // const increaseAge = () => {
+  //   setAge(age + 1)
+  //   console.log(age)
+  // }
 
-  const planets = [
-    {name: 'mars', isGasPlanet: false},
-    {name: 'earth', isGasPlanet: false},
-    {name: 'jupiter', isGasPlanet: true},
-    {name: 'venus', isGasPlanet: false},
-    {name: 'neptune', isGasPlanet: true},
-    {name: 'uranus', isGasPlanet: true},
-  ]
+  // ex2
+  // const [inputValue, setInputValue] = useState('')
+
+  // const handleInputChange = (event) => {
+  //   setInputValue(event.target.value)
+  // }
+
+  // ex3
+  // const [showText, setShowText] = useState(true)
+
+  // ex4
+  // const [textColor, setTextColor] = useState("black");
+
+  const [count, setCount] = useState(0)
+
+  const increase = () => {
+    setCount(count + 1)
+  }
+
+  const decrease = () => {
+    setCount(count - 1)
+  }
+
+  const setZero = () => {
+    setCount(0)
+  }
 
   return (
     <div className="App">
-      {/* <h1 className="name" >{age >= 18 ? "OverAge" : "UnderAge"}</h1>
-      <h1 style={isGreen ? {color: 'green'} : {color: 'red'}}>This have color</h1>
-      
-      {isGreen && <button>This is button</button>} */}
+      {/* ex1 */}
+      {/* {age}
+    <button onClick={increaseAge}>Increase Age</button> */}
 
-      {/* {names.map((name, key) => (
-        <h1 key={key}>{name}</h1>
-      ))} */}
+      {/* ex2 */}
+      {/* <input type="text" onChange={handleInputChange} name="" id="" />
+    <h1>{inputValue}</h1> */}
 
-      {/* {users.map((user,key) => {
-        return <User name={user.name} age={user.age} />
-      })} */}
+      {/* ex3 */}
+      {/* <button
+        onClick={() => {
+          setShowText(!showText);
+        }}
+      >
+        Show/Hide
+      </button> */}
 
-      {planets.map((planet) => !planet.isGasPlanet && <h1> {planet.name} </h1>)}
+{/* ex4 */}
+      {/* <button
+        onClick={() => {
+          setTextColor(textColor === 'red' ? 'black' : 'red');
+        }}
+      >
+        Change color
+      </button>
+      {showText && <h1>Hi my name is Akki</h1>}
+      <h1 style={{ color: textColor }}>Hi my name is Akki</h1> */}
+
+{/* exercise */}
+      <button onClick={increase}>Increase</button>
+      <button onClick={decrease}>Decrease</button>
+      <button onClick={setZero}>Set Zero</button>
+      <h1>{count}</h1>
     </div>
   );
 }
-
 
 export default App;
